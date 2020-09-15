@@ -1,6 +1,5 @@
 package com.pooflix.pooflix.documents;
 
-
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection = "Contenido")
@@ -35,26 +34,5 @@ public class Contenido {
     public void setCalificacion(Integer calificacion) {
         this.calificacion = calificacion;
     }
-
-    /*
-    public boolean visto() {
-
-        return false;
-
-    }
-
-    public void reproducir() {
-
-    }
-
-    public void pausar() {
-
-    }
-
-   
-    */
-
-  
-
 
 }

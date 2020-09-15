@@ -39,78 +39,57 @@ public class Temporada {
     }
 
     /*
-
-    public Episodio getEpisodio(Integer numeroEpisodio) {
-
-        for (Episodio epi : this.episodios) {
-            if (epi.getNumero() == numeroEpisodio) {
-                return epi;
-            }
-        }
-
-        return null;
-    }
-
-    */
+     * 
+     * public Episodio getEpisodio(Integer numeroEpisodio) {
+     * 
+     * for (Episodio epi : this.episodios) { if (epi.getNumero() == numeroEpisodio)
+     * { return epi; } }
+     * 
+     * return null; }
+     * 
+     */
 
     /*
-    /**
-     * Obtiene un episodio en base al nombre (es una sobrecarga del metodo
+     * /** Obtiene un episodio en base al nombre (es una sobrecarga del metodo
      * getEpisodio(int nro))
      * 
      * @param nombre
+     * 
      * @return
-     
-    public Episodio getEpisodio(String titulo) {
-        // Recorrer cada episodio
-        // Si el nombre de episodio del ciclo es igual a "nombre"
-        // Devolver esa episodio
-
-        for (Episodio epi : this.episodios) {
-            if (epi.getTitulo().equalsIgnoreCase(titulo)) {
-                return epi;
-            }
-
-        }
-
-        return null;
-    }
-
-    /**
-     * Obtiene un episodio en base a la posicion dentro del ArrayList. Recordar que
-     * los arraylist la primer posicion es la 0
+     * 
+     * public Episodio getEpisodio(String titulo) { // Recorrer cada episodio // Si
+     * el nombre de episodio del ciclo es igual a "nombre" // Devolver esa episodio
+     * 
+     * for (Episodio epi : this.episodios) { if
+     * (epi.getTitulo().equalsIgnoreCase(titulo)) { return epi; }
+     * 
+     * }
+     * 
+     * return null; }
+     * 
+     * /** Obtiene un episodio en base a la posicion dentro del ArrayList. Recordar
+     * que los arraylist la primer posicion es la 0
      * 
      * @param pos
+     * 
      * @return
-     
-    public Episodio getEpisodioAtPosicion(int pos) {
-        return this.episodios.get(pos);
-    }
-
-    /**
-     * Obtiene el nro de posicion(no el nro de episodio) de un episodio dentro de la
-     * lista
+     * 
+     * public Episodio getEpisodioAtPosicion(int pos) { return
+     * this.episodios.get(pos); }
+     * 
+     * /** Obtiene el nro de posicion(no el nro de episodio) de un episodio dentro
+     * de la lista
      * 
      * @param nro
+     * 
      * @return
-     
-    public Integer getEpisodioPosition(Integer nro) {
-
-        int pos = 0;
-        for (Episodio epi : this.episodios) {
-            if (epi.getNumero() == nro) {
-                return pos;
-            }
-            pos++;
-        }
-        if (this.episodios.size() == pos)
-            return -1;
-        return pos;
-    }
-
-    */
-
-
-   
+     * 
+     * public Integer getEpisodioPosition(Integer nro) {
+     * 
+     * int pos = 0; for (Episodio epi : this.episodios) { if (epi.getNumero() ==
+     * nro) { return pos; } pos++; } if (this.episodios.size() == pos) return -1;
+     * return pos; }
+     * 
+     */
 
 }

@@ -18,5 +18,4 @@ public interface PeliculaRepository extends MongoRepository<Pelicula, ObjectId> 
 
     List<Pelicula> findByDirectores(String fullName);
 
-
 }

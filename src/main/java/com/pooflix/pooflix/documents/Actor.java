@@ -1,21 +1,19 @@
 package com.pooflix.pooflix.documents;
 
-import java.util.List;
-
 import org.bson.types.ObjectId;
 
 public class Actor {
 
 	private ObjectId _id;
-	private String fullName; 
+	private String fullName;
 
 	public String get_id() {
-        return _id.toHexString();
-    }
+		return _id.toHexString();
+	}
 
-    public void set_id(ObjectId _id) {
-        this._id = _id;
-    }
+	public void set_id(ObjectId _id) {
+		this._id = _id;
+	}
 
 	public String getFullName() {
 		return fullName;
@@ -27,8 +25,5 @@ public class Actor {
 
 	// obtenerPeliculas
 	// obtenerSeries
-	
 
-	
-    
 }

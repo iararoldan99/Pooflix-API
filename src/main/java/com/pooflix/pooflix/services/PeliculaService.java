@@ -20,8 +20,8 @@ public class PeliculaService {
     GeneroService generoService;
 
     public Pelicula crearPelicula(Pelicula pelicula) {
-      //  return peliculaRepo.save(pelicula);
-      return crearPelicula(pelicula.getTitulo(), pelicula.getDuracion(), new ObjectId(pelicula.getGenero().get_id()));
+        // return peliculaRepo.save(pelicula);
+        return crearPelicula(pelicula.getTitulo(), pelicula.getDuracion(), new ObjectId(pelicula.getGenero().get_id()));
 
     }
 
@@ -34,7 +34,6 @@ public class PeliculaService {
         pelicula.setGenero(g);
         peliculaRepo.save(pelicula);
 
-
         return pelicula;
 
     }
@@ -44,19 +43,19 @@ public class PeliculaService {
 
     }
 
-    public Pelicula obtenerPeliculaPorTitulo(String titulo){
+    public Pelicula obtenerPeliculaPorTitulo(String titulo) {
         return peliculaRepo.findByTitulo(titulo);
     }
 
-    public Pelicula obtenerPeliculaPorId(ObjectId _id){
+    public Pelicula obtenerPeliculaPorId(ObjectId _id) {
         return peliculaRepo.findBy_id(_id);
     }
 
-    public List<Pelicula> obtenerPeliculaPorActor(String fullName){
+    public List<Pelicula> obtenerPeliculaPorActor(String fullName) {
         return peliculaRepo.findByActores(fullName);
     }
 
-    public List<Pelicula> obtenerPeliculaPorDirector(String fullName){
+    public List<Pelicula> obtenerPeliculaPorDirector(String fullName) {
         return peliculaRepo.findByDirectores(fullName);
     }
 

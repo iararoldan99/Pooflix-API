@@ -5,15 +5,16 @@ import java.util.List;
 import org.bson.types.ObjectId;
 
 import org.springframework.data.mongodb.core.mapping.Document;
+
 @Document(collection = "Peliculas")
 public class Pelicula {
 
     private ObjectId _id;
     private String titulo;
     private double duracion;
-    //private ObjectId generoId;
+    // private ObjectId generoId;
     private Genero genero;
-    private List<Actor> actores; 
+    private List<Actor> actores;
     private List<Director> directores;
 
     public void agregarActores(Actor actor) {
@@ -23,8 +24,8 @@ public class Pelicula {
     public void agregarDirectores(Director director) {
         this.directores.add(director);
     }
-    
-    public Pelicula(){
+
+    public Pelicula() {
 
     }
 
@@ -43,7 +44,6 @@ public class Pelicula {
         this._id = _id;
     }
 
-    
     public String getTitulo() {
         return titulo;
     }
@@ -60,7 +60,6 @@ public class Pelicula {
         this.duracion = duracion;
     }
 
-    
     public List<Actor> getActores() {
         return actores;
     }
@@ -85,10 +84,4 @@ public class Pelicula {
         this.genero = genero;
     }
 
-    
-
-	
-  
-   
-    
 }

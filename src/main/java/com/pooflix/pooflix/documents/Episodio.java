@@ -12,13 +12,6 @@ public class Episodio {
     private String titulo;
     private double duracion;
 
-    /*
-    public void reproducir() {
-        System.out.println("Reproduciendo episodio " + this.numero + " " + this.titulo);
-
-    }
-    */
-
     public String get_id() {
         return _id.toHexString();
     }

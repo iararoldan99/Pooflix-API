@@ -1,6 +1,5 @@
 package com.pooflix.pooflix.documents;
 
-
 import org.bson.types.ObjectId;
 
 public class Genero {
