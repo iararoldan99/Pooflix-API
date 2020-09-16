@@ -14,7 +14,7 @@ Pooflix es una API que permite ver un catalogo de peliculas, series y documental
 # Build Tools 🔧  
 Java y SpringBoot
 
-# Base de datos 💾
+# Base de datos 📂
 MongoDB
 
 # Deploy 🚀
