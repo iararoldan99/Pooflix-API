@@ -1,3 +1,7 @@
+<div style="width: 100%">
+<img src="https://github.com/iararoldan99/Pooflix-API/blob/master/src/main/resources/img/pooflix%20api.png?raw=true"/>
+  </div>
+
 # ¿De qué se trata? 😎🎬
 Pooflix es una API que permite ver un catalogo de peliculas, series y documentales, listadas por genero y filtrando por titulo, actor y director.
 
@@ -10,7 +14,7 @@ Pooflix es una API que permite ver un catalogo de peliculas, series y documental
 # Build Tools 🔧  
 Java y SpringBoot
 
-# Base de datos 💾
+# Base de datos 📂
 MongoDB
 
 # Deploy 🚀
