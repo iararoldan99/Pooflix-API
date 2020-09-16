@@ -17,7 +17,7 @@ MongoDB
 Heroku
 
 # Requests  📡 
-Se utilizó Postman para probar los diferentes request methods 
+Se utilizó Postman para probar los diferentes http methods 
 
 # Documentacion 📚
 
