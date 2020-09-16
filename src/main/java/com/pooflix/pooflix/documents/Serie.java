@@ -13,11 +13,7 @@ public class Serie {
     private ObjectId _id;
     private String titulo;
     private List<Temporada> temporadas = new ArrayList<>();
-    private List<Actor> actores;
 
-    public void agregarActores(Actor actor) {
-        this.actores.add(actor);
-    }
 
     public void agregarTemporadas(Temporada temporada) {
         this.temporadas.add(temporada);

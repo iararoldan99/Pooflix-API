@@ -38,10 +38,9 @@ public class GeneroService {
 
     }
 
-    public Genero obtenerGeneroById(ObjectId _objectId){
-        
+    public Genero obtenerGeneroById(ObjectId _objectId) {
+
         return generoRepo.findBy_id(_objectId);
     }
 
-    
 }

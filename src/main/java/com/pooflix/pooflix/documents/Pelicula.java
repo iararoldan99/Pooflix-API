@@ -14,16 +14,6 @@ public class Pelicula {
     private double duracion;
     // private ObjectId generoId;
     private Genero genero;
-    private List<Actor> actores;
-    private List<Director> directores;
-
-    public void agregarActores(Actor actor) {
-        this.actores.add(actor);
-    }
-
-    public void agregarDirectores(Director director) {
-        this.directores.add(director);
-    }
 
     public Pelicula() {
 
@@ -58,22 +48,6 @@ public class Pelicula {
 
     public void setDuracion(double duracion) {
         this.duracion = duracion;
-    }
-
-    public List<Actor> getActores() {
-        return actores;
-    }
-
-    public void setActores(List<Actor> actores) {
-        this.actores = actores;
-    }
-
-    public List<Director> getDirectores() {
-        return directores;
-    }
-
-    public void setDirectores(List<Director> directores) {
-        this.directores = directores;
     }
 
     public Genero getGenero() {
