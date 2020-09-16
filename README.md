@@ -3,9 +3,9 @@ Pooflix es una API que permite ver un catalogo de peliculas, series y documental
 
 # Funcionalidad 🔍
 
-✅ Crear Peliculas, Series y Documentales
-✅ Obtener el catalogo 
-✅ Filtrar contenido por título y reparto (actores/director)
+✅ Crear Peliculas, Series y Documentales <br>
+✅ Obtener el catalogo <br>
+✅ Filtrar contenido por título y reparto (actores/director) <br>
 
 # Build Tools 🔧  
 Java y SpringBoot
