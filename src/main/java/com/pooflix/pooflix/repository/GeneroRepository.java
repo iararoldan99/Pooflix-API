@@ -9,4 +9,6 @@ import org.springframework.stereotype.Repository;
 public interface GeneroRepository extends MongoRepository<Genero, ObjectId> {
     Genero findBy_id(ObjectId _id);
 
+    Genero findByNombre(String nombre);
+
 }

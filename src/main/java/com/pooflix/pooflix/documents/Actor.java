@@ -23,7 +23,4 @@ public class Actor {
 		this.fullName = fullName;
 	}
 
-	// obtenerPeliculas
-	// obtenerSeries
-
 }

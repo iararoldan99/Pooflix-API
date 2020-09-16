@@ -20,7 +20,6 @@ public class PeliculaService {
     GeneroService generoService;
 
     public Pelicula crearPelicula(Pelicula pelicula) {
-        // return peliculaRepo.save(pelicula);
         return crearPelicula(pelicula.getTitulo(), pelicula.getDuracion(), new ObjectId(pelicula.getGenero().get_id()));
 
     }
@@ -49,14 +48,6 @@ public class PeliculaService {
 
     public Pelicula obtenerPeliculaPorId(ObjectId _id) {
         return peliculaRepo.findBy_id(_id);
-    }
-
-    public List<Pelicula> obtenerPeliculaPorActor(String fullName) {
-        return peliculaRepo.findByActores(fullName);
-    }
-
-    public List<Pelicula> obtenerPeliculaPorDirector(String fullName) {
-        return peliculaRepo.findByDirectores(fullName);
     }
 
 }

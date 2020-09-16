@@ -8,7 +8,6 @@ public class Websodio {
   private String url;
 
   public Websodio(Integer numero, String titulo) {
-    // super(numero, nombre);
     this.url = "http://movies.com";
   }
 
@@ -27,11 +26,6 @@ public class Websodio {
   public void set_id(ObjectId _id) {
     this._id = _id;
   }
-
-  // @Override
-  // public void reproducir(){
-  // System.out.println("Reproduciendo websodio " + getNombre() + " " + url);
-  // }
 
   /**
    * "envia" un mail de alerta cuando la serie este online. Este metodo NO esta en

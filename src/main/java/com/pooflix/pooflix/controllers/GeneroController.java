@@ -17,15 +17,15 @@ import org.springframework.web.bind.annotation.RestController;
 public class GeneroController {
     @Autowired
     GeneroService generoService;
-    
+
     @PostMapping("/generos")
     public ResponseEntity<GenericResponse> crearGenero(@RequestBody Genero genero) {
-        
+
         generoService.crearGenero(genero);
-        
+
         GenericResponse gR = new GenericResponse();
         gR.isOk = true;
-        gR.id = genero.get_id(); //.toHexString();
+        gR.id = genero.get_id(); // .toHexString();
         gR.mensaje = "Genero creado con exito";
         return ResponseEntity.ok(gR);
     }

@@ -5,8 +5,6 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document(collection = "Contenido")
 public class Contenido {
 
-    // dentro de Contenido: Peliculas, Series, Documentales y Websodios
-
     private String titulo;
     private double tiempoVisto;
     private Integer calificacion;

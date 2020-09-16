@@ -19,12 +19,12 @@ public class ActorController {
     ActorService actorService;
 
     @PostMapping("/actores")
-    public ResponseEntity<GenericResponse> crearActor(@RequestBody Actor actor){
+    public ResponseEntity<GenericResponse> crearActor(@RequestBody Actor actor) {
         actorService.crearActor(actor);
 
         GenericResponse gR = new GenericResponse();
         gR.isOk = true;
-        gR.id = actor.get_id(); //.toHexString();
+        gR.id = actor.get_id(); // .toHexString();
         gR.mensaje = "Actor creado con exito";
         return ResponseEntity.ok(gR);
 

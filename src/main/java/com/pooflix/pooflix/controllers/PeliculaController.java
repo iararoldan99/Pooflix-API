@@ -20,12 +20,12 @@ public class PeliculaController {
 
     @PostMapping("/peliculas")
     public ResponseEntity<GenericResponse> crearPelicula(@RequestBody Pelicula pelicula) {
-        
-       Pelicula p = peliculaService.crearPelicula(pelicula);
-        
+
+        Pelicula p = peliculaService.crearPelicula(pelicula);
+
         GenericResponse gR = new GenericResponse();
         gR.isOk = true;
-        gR.id = p.get_id(); //.toHexString();
+        gR.id = p.get_id(); 
         gR.mensaje = "Pelicula creada con exito";
         return ResponseEntity.ok(gR);
     }

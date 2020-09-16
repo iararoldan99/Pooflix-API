@@ -14,7 +14,6 @@ public class Serie {
     private String titulo;
     private List<Temporada> temporadas = new ArrayList<>();
 
-
     public void agregarTemporadas(Temporada temporada) {
         this.temporadas.add(temporada);
     }

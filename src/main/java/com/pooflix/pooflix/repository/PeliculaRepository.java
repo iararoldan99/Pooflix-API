@@ -1,7 +1,5 @@
 package com.pooflix.pooflix.repository;
 
-import java.util.List;
-
 import com.pooflix.pooflix.documents.Pelicula;
 
 import org.bson.types.ObjectId;
@@ -14,8 +12,8 @@ public interface PeliculaRepository extends MongoRepository<Pelicula, ObjectId> 
 
     Pelicula findByTitulo(String titulo);
 
-    List<Pelicula> findByActores(String fullName);
+    // List<Pelicula> findByActores(String fullName);
 
-    List<Pelicula> findByDirectores(String fullName);
+    // List<Pelicula> findByDirectores(String fullName);
 
 }

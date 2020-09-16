@@ -1,7 +1,5 @@
 package com.pooflix.pooflix.documents;
 
-import java.util.List;
-
 import org.bson.types.ObjectId;
 
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -12,7 +10,6 @@ public class Pelicula {
     private ObjectId _id;
     private String titulo;
     private double duracion;
-    // private ObjectId generoId;
     private Genero genero;
 
     public Pelicula() {
