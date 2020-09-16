@@ -1,11 +1,27 @@
-# Introduction 
+# ¿De qué se trata? 😎🎬
 Pooflix es una API que permite ver un catalogo de peliculas, series y documentales, listadas por genero y filtrando por titulo, actor y director.
 
-# Overview
-Construida con Java, Springboot y MongoDB
+# Funcionalidad 🔍
 
-# Error Codes
--400 Bad Request: En caso de un error al escribir la url de la solicitud 
--404 Not Found: Si quiere traer un dato que aun no existe
+✅ Crear Peliculas, Series y Documentales
+✅ Obtener el catalogo 
+✅ Filtrar contenido por título y reparto (actores/director)
+
+# Build Tools 🔧  
+Java y SpringBoot
+
+# Base de datos 💾
+MongoDB
+
+# Deploy 🚀
+Heroku
+
+# Requests  📡 
+Se utilizó Postman para probar los diferentes request methods 
+
+# Documentacion 📚
+
+Pooflix API Documentation 
+
 
 
