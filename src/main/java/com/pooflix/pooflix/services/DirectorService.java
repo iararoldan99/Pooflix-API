@@ -29,7 +29,7 @@ public class DirectorService {
         return directorRepository.findAll();
     }
 
-    public Director obtenerPorNombre(String fullName){
+    public Director obtenerPorNombre(String fullName) {
         return directorRepository.findByFullName(fullName);
     }
 

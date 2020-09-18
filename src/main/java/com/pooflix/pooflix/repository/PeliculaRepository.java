@@ -12,5 +12,4 @@ public interface PeliculaRepository extends MongoRepository<Pelicula, ObjectId> 
 
     Pelicula findByTitulo(String titulo);
 
-
 }

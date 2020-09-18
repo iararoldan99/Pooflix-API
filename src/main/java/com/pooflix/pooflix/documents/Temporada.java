@@ -38,6 +38,15 @@ public class Temporada {
         this.numero = numero;
     }
 
+    public Temporada() {
+    }
+
+    public Temporada(ObjectId _id, Integer numero, List<Episodio> episodios) {
+        this._id = _id;
+        this.numero = numero;
+        this.episodios = episodios;
+    }
+
     /*
      * 
      * public Episodio getEpisodio(Integer numeroEpisodio) {

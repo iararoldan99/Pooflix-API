@@ -34,7 +34,7 @@ public class ActorService {
         return _id;
     }
 
-    public Actor obtenerPorNombre(String fullName){
+    public Actor obtenerPorNombre(String fullName) {
         return actorRepository.findByFullName(fullName);
     }
 

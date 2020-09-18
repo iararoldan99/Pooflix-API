@@ -10,13 +10,7 @@ import com.pooflix.pooflix.services.ActorService;
 import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class ActorController {
@@ -59,7 +53,8 @@ public class ActorController {
     }
 
     @PutMapping(("/api/actores/{id}"))
-    ResponseEntity<GenericResponse> actualizarActorPorId(@PathVariable ObjectId id, @RequestBody PersonaModifRequest aR) {
+    ResponseEntity<GenericResponse> actualizarActorPorId(@PathVariable ObjectId id,
+            @RequestBody PersonaModifRequest aR) {
         Actor actor = actorService.obtenerAPorId(id);
         if (actor == null) {
             return ResponseEntity.notFound().build();

@@ -48,11 +48,11 @@ public class GeneroController {
     }
 
     @GetMapping("/api/generos")
-  public ResponseEntity<Genero> buscarGeneroPorNombre(@RequestParam(value="nombre") String nombre) {
-    Genero genero = generoService.obtenerGeneroPorNombre(nombre);
-    if (genero == null)
-      return ResponseEntity.notFound().build();
-    return ResponseEntity.ok(genero);
+    public ResponseEntity<Genero> buscarGeneroPorNombre(@RequestParam(value = "nombre") String nombre) {
+        Genero genero = generoService.obtenerGeneroPorNombre(nombre);
+        if (genero == null)
+            return ResponseEntity.notFound().build();
+        return ResponseEntity.ok(genero);
 
-  }
+    }
 }

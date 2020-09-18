@@ -51,4 +51,13 @@ public class Serie {
     public void setTitulo(String titulo) {
         this.titulo = titulo;
     }
+
+    public Serie(ObjectId _id, String titulo, List<Temporada> temporadas) {
+        this._id = _id;
+        this.titulo = titulo;
+        this.temporadas = temporadas;
+    }
+
+    public Serie() {
+    }
 }

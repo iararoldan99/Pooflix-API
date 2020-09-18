@@ -44,4 +44,14 @@ public class Episodio {
         this.titulo = titulo;
     }
 
+    public Episodio(ObjectId _id, Integer numero, String titulo, double duracion) {
+        this._id = _id;
+        this.numero = numero;
+        this.titulo = titulo;
+        this.duracion = duracion;
+    }
+
+    public Episodio() {
+    }
+
 }

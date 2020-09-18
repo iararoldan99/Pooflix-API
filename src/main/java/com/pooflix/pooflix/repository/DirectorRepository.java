@@ -7,7 +7,7 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 
 public interface DirectorRepository extends MongoRepository<Director, ObjectId> {
     Director findBy_id(ObjectId _id);
-    Director findByFullName(String fullName);
 
+    Director findByFullName(String fullName);
 
 }

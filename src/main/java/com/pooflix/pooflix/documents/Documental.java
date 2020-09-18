@@ -25,4 +25,12 @@ public class Documental {
         this.titulo = titulo;
     }
 
+    public Documental(ObjectId _id, String titulo) {
+        this._id = _id;
+        this.titulo = titulo;
+    }
+
+    public Documental() {
+    }
+
 }

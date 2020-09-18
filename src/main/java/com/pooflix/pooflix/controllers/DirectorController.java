@@ -60,7 +60,8 @@ public class DirectorController {
     }
 
     @PutMapping(("/api/directores/{id}"))
-    ResponseEntity<GenericResponse> actualizarDirectorPorId(@PathVariable ObjectId id, @RequestBody PersonaModifRequest dR) {
+    ResponseEntity<GenericResponse> actualizarDirectorPorId(@PathVariable ObjectId id,
+            @RequestBody PersonaModifRequest dR) {
         Director director = directorService.obtenerDPorId(id);
         if (director == null) {
             return ResponseEntity.notFound().build();

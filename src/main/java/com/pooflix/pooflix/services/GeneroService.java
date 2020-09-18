@@ -43,20 +43,20 @@ public class GeneroService {
         return generoRepo.findBy_id(_objectId);
     }
 
-    public Genero obtenerGeneroPorNombre(String nombre){
+    public Genero obtenerGeneroPorNombre(String nombre) {
         return generoRepo.findByNombre(nombre);
     }
 
-    public Genero actualizarGenero(Genero genero){
+    public Genero actualizarGenero(Genero genero) {
         return generoRepo.save(genero);
     }
 
-    public void borrarGeneroPorId(ObjectId _id){
+    public void borrarGeneroPorId(ObjectId _id) {
         generoRepo.deleteById(_id);
 
     }
 
-    public void borrarTodosLosGeneros(){
+    public void borrarTodosLosGeneros() {
         generoRepo.deleteAll();
     }
 

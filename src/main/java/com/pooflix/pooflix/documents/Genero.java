@@ -29,4 +29,9 @@ public class Genero {
     public void setGeneroId(String hexString) {
     }
 
+    public Genero(ObjectId _id, String nombre) {
+        this._id = _id;
+        this.nombre = nombre;
+    }
+
 }

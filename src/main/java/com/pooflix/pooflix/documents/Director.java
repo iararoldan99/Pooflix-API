@@ -23,4 +23,12 @@ public class Director {
         this.fullName = fullName;
     }
 
+    public Director(ObjectId _id, String fullName) {
+        this._id = _id;
+        this.fullName = fullName;
+    }
+
+    public Director() {
+    }
+
 }

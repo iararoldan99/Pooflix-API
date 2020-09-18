@@ -27,6 +27,14 @@ public class Websodio {
     this._id = _id;
   }
 
+  public Websodio() {
+  }
+
+  public Websodio(ObjectId _id, String url) {
+    this._id = _id;
+    this.url = url;
+  }
+
   /**
    * "envia" un mail de alerta cuando la serie este online. Este metodo NO esta en
    * EPISODIO.

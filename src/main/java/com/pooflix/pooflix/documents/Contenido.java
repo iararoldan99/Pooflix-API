@@ -33,4 +33,13 @@ public class Contenido {
         this.calificacion = calificacion;
     }
 
+    public Contenido(String titulo, double tiempoVisto, Integer calificacion) {
+        this.titulo = titulo;
+        this.tiempoVisto = tiempoVisto;
+        this.calificacion = calificacion;
+    }
+
+    public Contenido() {
+    }
+
 }
