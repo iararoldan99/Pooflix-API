@@ -8,12 +8,12 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface PeliculaRepository extends MongoRepository<Pelicula, ObjectId> {
-    Pelicula findBy_id(ObjectId _id);
+    Pelicula findBy_id(ObjectId id);
 
     Pelicula findByTitulo(String titulo);
 
-    // List<Pelicula> findByActores(String fullName);
+    Pelicula findByActores(String fullName);
 
-    // List<Pelicula> findByDirectores(String fullName);
+    Pelicula findByDirector(String fullName);
 
 }

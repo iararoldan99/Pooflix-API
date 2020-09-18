@@ -29,7 +29,21 @@ public class ActorService {
         return actorRepository.findAll();
     }
 
-    public Actor obtenerActorPorId(ObjectId _id) {
-        return actorRepository.findBy_id(_id);
+    public ObjectId obtenerActorPorId(ObjectId _id) {
+         actorRepository.findBy_id(_id);
+         return _id;
+    }
+
+    public Actor actualizarActor(Actor actor){
+        return actorRepository.save(actor);
+    }
+
+    public void borrarActorPorId(ObjectId _id){
+        actorRepository.deleteById(_id);
+
+    }
+
+    public void borrarTodosLosActores(){
+        actorRepository.deleteAll();
     }
 }

@@ -1,9 +1,11 @@
 package com.pooflix.pooflix.documents;
 
 import org.bson.types.ObjectId;
+import org.springframework.data.mongodb.core.mapping.Field;
 
 public class Actor {
 
+	@Field("actorId")
 	private ObjectId _id;
 	private String fullName;
 

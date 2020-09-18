@@ -1,5 +1,8 @@
 package com.pooflix.pooflix.documents;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.bson.types.ObjectId;
 
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -11,16 +14,16 @@ public class Pelicula {
     private String titulo;
     private double duracion;
     private Genero genero;
+    private List<ObjectId> actores = new ArrayList<>();
+    private List<Director> director;
+
+    public ObjectId asignarActor(ObjectId _idActor) {
+        this.actores.add(_idActor);
+        return _idActor;
+    }
 
     public Pelicula() {
 
-    }
-
-    public Pelicula(ObjectId _id, String titulo, double duracion, Genero genero) {
-        this._id = _id;
-        this.titulo = titulo;
-        this.duracion = duracion;
-        this.genero = genero;
     }
 
     public String get_id() {
@@ -54,5 +57,15 @@ public class Pelicula {
     public void setGenero(Genero genero) {
         this.genero = genero;
     }
+
+    public List<Director> getDirector() {
+        return director;
+    }
+
+    public void setDirector(List<Director> director) {
+        this.director = director;
+    }
+
+    
 
 }
