@@ -3,6 +3,8 @@ package com.pooflix.pooflix.documents;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import org.bson.types.ObjectId;
 
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -14,16 +16,20 @@ public class Pelicula {
     private String titulo;
     private double duracion;
     private Genero genero;
-    private List<ObjectId> actores = new ArrayList<>();
-    private List<Director> director;
-
-    public ObjectId asignarActor(ObjectId _idActor) {
-        this.actores.add(_idActor);
-        return _idActor;
-    }
+    private Actor actor;
+    private Director director;
 
     public Pelicula() {
 
+    }
+
+    public Pelicula(ObjectId _id, String titulo, double duracion, Genero genero, Actor actor, Director director) {
+        this._id = _id;
+        this.titulo = titulo;
+        this.duracion = duracion;
+        this.genero = genero;
+        this.actor = actor;
+        this.director = director;
     }
 
     public String get_id() {
@@ -58,14 +64,28 @@ public class Pelicula {
         this.genero = genero;
     }
 
-    public List<Director> getDirector() {
-        return director;
+    public Actor getActor() {
+        return actor;
     }
 
-    public void setDirector(List<Director> director) {
+    public void setActor(Actor actor) {
+        this.actor = actor;
+    }
+
+    public void setDirector(Director director) {
         this.director = director;
     }
 
-    
+    public Director getDirector() {
+        return director;
+    }
+
+    /*
+     * public ObjectId asignarActor(ObjectId _idActor) { this.actores.add(_idActor);
+     * return _idActor; }
+     * 
+     * public ObjectId asignarDirector(ObjectId _idDirector) {
+     * this.actores.add(_idDirector); return _idDirector; }
+     */
 
 }

@@ -30,20 +30,28 @@ public class ActorService {
     }
 
     public ObjectId obtenerActorPorId(ObjectId _id) {
-         actorRepository.findBy_id(_id);
-         return _id;
+        actorRepository.findBy_id(_id);
+        return _id;
     }
 
-    public Actor actualizarActor(Actor actor){
+    public Actor obtenerPorNombre(String fullName){
+        return actorRepository.findByFullName(fullName);
+    }
+
+    public Actor obtenerAPorId(ObjectId _id) {
+        return actorRepository.findBy_id(_id);
+    }
+
+    public Actor actualizarActor(Actor actor) {
         return actorRepository.save(actor);
     }
 
-    public void borrarActorPorId(ObjectId _id){
+    public void borrarActorPorId(ObjectId _id) {
         actorRepository.deleteById(_id);
 
     }
 
-    public void borrarTodosLosActores(){
+    public void borrarTodosLosActores() {
         actorRepository.deleteAll();
     }
 }

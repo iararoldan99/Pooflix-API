@@ -3,6 +3,7 @@ package com.pooflix.pooflix.services;
 import java.util.List;
 
 import com.pooflix.pooflix.documents.Actor;
+import com.pooflix.pooflix.documents.Director;
 import com.pooflix.pooflix.documents.Genero;
 import com.pooflix.pooflix.documents.Pelicula;
 import com.pooflix.pooflix.repository.PeliculaRepository;
@@ -23,18 +24,27 @@ public class PeliculaService {
     @Autowired
     ActorService actorService;
 
+    @Autowired
+    DirectorService directorService;
+
     public Pelicula crearPelicula(Pelicula pelicula) {
-        return crearPelicula(pelicula.getTitulo(), pelicula.getDuracion(), new ObjectId(pelicula.getGenero().get_id()));
+        return crearPelicula(pelicula.getTitulo(), pelicula.getDuracion(), new ObjectId(pelicula.getGenero().get_id()),
+                new ObjectId(pelicula.getActor().get_id()), new ObjectId(pelicula.getDirector().get_id()));
 
     }
 
-    public Pelicula crearPelicula(String titulo, double duracion, ObjectId _generoId) {
+    public Pelicula crearPelicula(String titulo, double duracion, ObjectId _generoId, ObjectId _actorId,
+            ObjectId _directorId) {
 
         Pelicula pelicula = new Pelicula();
         pelicula.setTitulo(titulo);
         pelicula.setDuracion(duracion);
         Genero g = generoService.obtenerGeneroById(_generoId);
         pelicula.setGenero(g);
+        Actor a = actorService.obtenerAPorId(_actorId);
+        pelicula.setActor(a);
+        Director d = directorService.obtenerDPorId(_directorId);
+        pelicula.setDirector(d);
         peliculaRepo.save(pelicula);
 
         return pelicula;
@@ -54,22 +64,29 @@ public class PeliculaService {
         return peliculaRepo.findBy_id(_id);
     }
 
-    public Pelicula obtenerPeliculaPorActor(String fullName) {
-        return peliculaRepo.findByActores(fullName);
+    public Pelicula actualizarPelicula(Pelicula pelicula) {
+        return peliculaRepo.save(pelicula);
     }
 
-    public Pelicula obtenerPeliculaPorDirector(String fullName) {
-        return peliculaRepo.findByDirector(fullName);
+    public void borrarPeliculaPorId(ObjectId _id) {
+        peliculaRepo.deleteById(_id);
+
     }
 
-    public boolean asignarActor(ObjectId _id, ObjectId _idActor) {
-        Pelicula pelicula = obtenerPeliculaPorId(_id);
-
-        pelicula.asignarActor(actorService.obtenerActorPorId(_idActor));
-
-        peliculaRepo.save(pelicula);
-
-        return true;
+    public void borrarTodasLasPeliculas() {
+        peliculaRepo.deleteAll();
     }
+
+    /*
+     * public boolean asignarActor(ObjectId _id, ObjectId _idActor) { Pelicula
+     * pelicula = obtenerPeliculaPorId(_id);
+     * 
+     * pelicula.asignarActor(actorService.obtenerActorPorId(_idActor));
+     * 
+     * peliculaRepo.save(pelicula);
+     * 
+     * return true; }
+     * 
+     */
 
 }

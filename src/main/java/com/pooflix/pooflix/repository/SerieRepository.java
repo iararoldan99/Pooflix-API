@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface SerieRepository extends MongoRepository<Serie, ObjectId> {
-    Serie findBy_id(ObjectId _id);
+    Serie findBy_id(ObjectId id);
 
     Serie findByTitulo(String titulo);
 

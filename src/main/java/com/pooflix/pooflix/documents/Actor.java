@@ -5,7 +5,7 @@ import org.springframework.data.mongodb.core.mapping.Field;
 
 public class Actor {
 
-	@Field("actorId")
+	//@Field("actorId")
 	private ObjectId _id;
 	private String fullName;
 
@@ -23,6 +23,15 @@ public class Actor {
 
 	public void setFullName(String fullName) {
 		this.fullName = fullName;
+	}
+
+	public Actor(ObjectId _id, String fullName) {
+		this._id = _id;
+		this.fullName = fullName;
+	}
+
+	public Actor(){
+		
 	}
 
 }

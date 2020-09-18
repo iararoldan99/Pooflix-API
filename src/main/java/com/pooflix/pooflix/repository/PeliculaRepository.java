@@ -12,8 +12,5 @@ public interface PeliculaRepository extends MongoRepository<Pelicula, ObjectId> 
 
     Pelicula findByTitulo(String titulo);
 
-    Pelicula findByActores(String fullName);
-
-    Pelicula findByDirector(String fullName);
 
 }
