@@ -1,4 +1,4 @@
-package com.pooflix.pooflix.request;
+package com.pooflix.pooflix.models.request;
 
 public class PersonaModifRequest {
     public String fullName;

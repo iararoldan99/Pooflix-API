@@ -3,9 +3,11 @@ package com.pooflix.pooflix.controllers;
 import java.util.List;
 
 import com.pooflix.pooflix.documents.Actor;
-import com.pooflix.pooflix.request.PersonaModifRequest;
-import com.pooflix.pooflix.response.GenericResponse;
+import com.pooflix.pooflix.documents.Serie;
+import com.pooflix.pooflix.models.request.PersonaModifRequest;
+import com.pooflix.pooflix.models.response.GenericResponse;
 import com.pooflix.pooflix.services.ActorService;
+import com.pooflix.pooflix.services.SerieService;
 
 import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +18,8 @@ import org.springframework.web.bind.annotation.*;
 public class ActorController {
     @Autowired
     ActorService actorService;
+    @Autowired
+    SerieService serieService;
 
     @PostMapping("/actores")
     public ResponseEntity<GenericResponse> crearActor(@RequestBody Actor actor) {
@@ -69,5 +73,12 @@ public class ActorController {
         r.id = newActor.get_id();
 
         return ResponseEntity.ok(r);
+    }
+
+    @GetMapping("/actores/{id}/series")
+    ResponseEntity<List<Serie>> seriesActor(@PathVariable ObjectId id) {
+
+        return ResponseEntity.ok(serieService.obtenerSeriesByActor(id));
+
     }
 }

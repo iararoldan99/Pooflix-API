@@ -1,4 +1,4 @@
-package com.pooflix.pooflix.response;
+package com.pooflix.pooflix.models.response;
 
 public class GenericResponse {
     public boolean isOk;

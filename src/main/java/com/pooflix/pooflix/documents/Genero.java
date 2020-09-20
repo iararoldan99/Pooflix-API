@@ -1,9 +1,11 @@
 package com.pooflix.pooflix.documents;
 
 import org.bson.types.ObjectId;
+import org.springframework.data.mongodb.core.mapping.Field;
 
 public class Genero {
     private ObjectId _id;
+    @Field(order = 1)
     private String nombre;
 
     public Genero() {

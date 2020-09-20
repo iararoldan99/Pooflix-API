@@ -6,6 +6,8 @@ import com.pooflix.pooflix.documents.Actor;
 import com.pooflix.pooflix.documents.Director;
 import com.pooflix.pooflix.documents.Genero;
 import com.pooflix.pooflix.documents.Pelicula;
+import com.pooflix.pooflix.models.request.ModifPeli;
+import com.pooflix.pooflix.models.request.PeliCalif;
 import com.pooflix.pooflix.repository.PeliculaRepository;
 
 import org.bson.types.ObjectId;
@@ -27,28 +29,36 @@ public class PeliculaService {
     @Autowired
     DirectorService directorService;
 
-    public Pelicula crearPelicula(Pelicula pelicula) {
-        return crearPelicula(pelicula.getTitulo(), pelicula.getDuracion(), new ObjectId(pelicula.getGenero().get_id()),
-                new ObjectId(pelicula.getActor().get_id()), new ObjectId(pelicula.getDirector().get_id()));
+    public boolean crearNuevaPelicula(Pelicula pelicula) {
+        peliculaRepo.save(pelicula);
+        return true;
+    }
+
+    public Pelicula crearPelicula(String titulo, List<Genero> generos, List<Director> directores, List<Actor> actores) {
+        if (existePelicula(titulo)) {
+            return null;
+        } else {
+            Pelicula pelicula = new Pelicula();
+            pelicula.setTitulo(titulo);
+            pelicula.setGeneros(generos);
+            pelicula.setDirectores(directores);
+            pelicula.setActores(actores);
+
+            boolean peliculaCreada = crearNuevaPelicula(pelicula);
+            if (peliculaCreada)
+                return pelicula;
+            else
+                return null;
+        }
 
     }
 
-    public Pelicula crearPelicula(String titulo, double duracion, ObjectId _generoId, ObjectId _actorId,
-            ObjectId _directorId) {
-
-        Pelicula pelicula = new Pelicula();
-        pelicula.setTitulo(titulo);
-        pelicula.setDuracion(duracion);
-        Genero g = generoService.obtenerGeneroById(_generoId);
-        pelicula.setGenero(g);
-        Actor a = actorService.obtenerAPorId(_actorId);
-        pelicula.setActor(a);
-        Director d = directorService.obtenerDPorId(_directorId);
-        pelicula.setDirector(d);
-        peliculaRepo.save(pelicula);
-
-        return pelicula;
-
+    boolean existePelicula(String titulo) {
+        Pelicula pelicula = peliculaRepo.findByTitulo(titulo);
+        if (pelicula != null)
+            return true;
+        else
+            return false;
     }
 
     public List<Pelicula> obtenerTodasLasPeliculas() {
@@ -64,8 +74,20 @@ public class PeliculaService {
         return peliculaRepo.findBy_id(_id);
     }
 
-    public Pelicula actualizarPelicula(Pelicula pelicula) {
-        return peliculaRepo.save(pelicula);
+    public Pelicula modificarPelicula(Pelicula pelicula, ModifPeli modifPelicula) {
+
+        pelicula.setTitulo(modifPelicula.titulo);
+        pelicula.setGeneros(modifPelicula.generos);
+        pelicula.setActores(modifPelicula.actores);
+        pelicula.setDirectores(modifPelicula.directores);
+
+        boolean peliculaModificada = this.crearNuevaPelicula(pelicula);
+        if (peliculaModificada) {
+            return pelicula;
+        } else {
+            return null;
+        }
+
     }
 
     public void borrarPeliculaPorId(ObjectId _id) {
@@ -77,16 +99,12 @@ public class PeliculaService {
         peliculaRepo.deleteAll();
     }
 
-    /*
-     * public boolean asignarActor(ObjectId _id, ObjectId _idActor) { Pelicula
-     * pelicula = obtenerPeliculaPorId(_id);
-     * 
-     * pelicula.asignarActor(actorService.obtenerActorPorId(_idActor));
-     * 
-     * peliculaRepo.save(pelicula);
-     * 
-     * return true; }
-     * 
-     */
+    public Pelicula calificarPelicula(Pelicula peli, PeliCalif calificacion) {
+
+        peli.setCalificacion(calificacion.calificacion);
+
+        return peli;
+
+    }
 
 }

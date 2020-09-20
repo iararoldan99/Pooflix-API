@@ -3,8 +3,8 @@ package com.pooflix.pooflix.controllers;
 import java.util.List;
 
 import com.pooflix.pooflix.documents.Director;
-import com.pooflix.pooflix.request.PersonaModifRequest;
-import com.pooflix.pooflix.response.GenericResponse;
+import com.pooflix.pooflix.models.request.PersonaModifRequest;
+import com.pooflix.pooflix.models.response.GenericResponse;
 import com.pooflix.pooflix.services.DirectorService;
 
 import org.bson.types.ObjectId;

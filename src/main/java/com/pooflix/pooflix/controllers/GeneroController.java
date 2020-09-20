@@ -3,7 +3,7 @@ package com.pooflix.pooflix.controllers;
 import java.util.List;
 
 import com.pooflix.pooflix.documents.Genero;
-import com.pooflix.pooflix.response.GenericResponse;
+import com.pooflix.pooflix.models.response.GenericResponse;
 import com.pooflix.pooflix.services.GeneroService;
 
 import org.bson.types.ObjectId;

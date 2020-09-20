@@ -44,7 +44,8 @@ public class GeneroService {
     }
 
     public Genero obtenerGeneroPorNombre(String nombre) {
-        return generoRepo.findByNombre(nombre);
+        Genero genero = generoRepo.findByNombre(nombre);
+        return genero;
     }
 
     public Genero actualizarGenero(Genero genero) {
