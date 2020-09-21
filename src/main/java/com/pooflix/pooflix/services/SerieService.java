@@ -37,7 +37,8 @@ public class SerieService {
             return false;
     }
 
-    public Serie crearSerie(String titulo, List<Genero> generos, List<Actor> actores, List<Director> directores, List<Temporada> temporadas) {
+    public Serie crearSerie(String titulo, List<Genero> generos, List<Actor> actores, List<Director> directores,
+            List<Temporada> temporadas) {
         if (existeSerie(titulo)) {
             return null;
         } else {

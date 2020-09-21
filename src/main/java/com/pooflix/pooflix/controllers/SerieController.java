@@ -28,7 +28,8 @@ public class SerieController {
     @PostMapping("/series")
     public ResponseEntity<GenericResponse> crearSerie(@RequestBody SerieRequest serieReq) {
 
-        Serie serie = serieService.crearSerie(serieReq.titulo, serieReq.generos, serieReq.actores, serieReq.directores, serieReq.temporadas);
+        Serie serie = serieService.crearSerie(serieReq.titulo, serieReq.generos, serieReq.actores, serieReq.directores,
+                serieReq.temporadas);
         if (serie == null) {
             return ResponseEntity.badRequest().build();
         }
@@ -67,7 +68,7 @@ public class SerieController {
     }
 
     @GetMapping("/series/actores/{_id}")
-    public ResponseEntity<List<Serie>> traerSeriePorActorId(@PathVariable ObjectId _id){
+    public ResponseEntity<List<Serie>> traerSeriePorActorId(@PathVariable ObjectId _id) {
         return ResponseEntity.ok(serieService.obtenerSeriesByActor(_id));
 
     }

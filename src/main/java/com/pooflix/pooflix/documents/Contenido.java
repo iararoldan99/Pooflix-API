@@ -29,7 +29,6 @@ public class Contenido {
         this.titulo = titulo;
     }
 
-
     public List<Genero> getGeneros() {
         return generos;
     }
@@ -37,7 +36,6 @@ public class Contenido {
     public void setGeneros(List<Genero> generos) {
         this.generos = generos;
     }
-
 
     public List<Actor> getActores() {
         return actores;
@@ -79,5 +77,4 @@ public class Contenido {
         this.calificacion = calificacion;
     }
 
-   
 }

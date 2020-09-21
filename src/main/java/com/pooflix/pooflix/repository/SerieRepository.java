@@ -15,11 +15,11 @@ public interface SerieRepository extends MongoRepository<Serie, ObjectId> {
 
     Serie findByTitulo(String titulo);
 
-    //En este caso busca por "actores._id", y el "." se reemplaza por un "_"
-    //entonces qeuda Actores__id
+    // En este caso busca por "actores._id", y el "." se reemplaza por un "_"
+    // entonces qeuda Actores__id
     List<Serie> findByActores__id(ObjectId actorId);
 
-    //Es igual al de arriba, excepto que pongo el query como filtro
+    // Es igual al de arriba, excepto que pongo el query como filtro
     @Query(value = "{ 'actores._id' : ?0 }")
     List<Serie> findSeriesByActor_IdEntero(ObjectId muestraId);
 
