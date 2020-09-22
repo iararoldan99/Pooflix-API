@@ -11,8 +11,8 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Temporada {
 
     private ObjectId _id;
-    private Integer totalTemporadas;
     private Integer numero;
+    private Integer numTotalEpisodios;
     private List<Episodio> episodios = new ArrayList<>();
     private List<Websodio> websodios = new ArrayList<>();
 
@@ -43,25 +43,28 @@ public class Temporada {
     public Temporada() {
     }
 
-    public Temporada(ObjectId _id, Integer numero, List<Episodio> episodios) {
-        this._id = _id;
-        this.numero = numero;
-        this.episodios = episodios;
-    }
-
-    public Integer getTotalTemporadas() {
-        return totalTemporadas;
-    }
-
-    public void setTotalTemporadas(Integer totalTemporadas) {
-        this.totalTemporadas = totalTemporadas;
-    }
-
     public List<Websodio> getWebsodios() {
         return websodios;
     }
 
     public void setWebsodios(List<Websodio> websodios) {
+        this.websodios = websodios;
+    }
+
+    public Integer getNumTotalEpisodios() {
+        return numTotalEpisodios;
+    }
+
+    public void setNumTotalEpisodios(Integer numTotalEpisodios) {
+        this.numTotalEpisodios = numTotalEpisodios;
+    }
+
+    public Temporada(ObjectId _id, Integer numero, Integer numTotalEpisodios, List<Episodio> episodios,
+            List<Websodio> websodios) {
+        this._id = _id;
+        this.numero = numero;
+        this.numTotalEpisodios = numTotalEpisodios;
+        this.episodios = episodios;
         this.websodios = websodios;
     }
 

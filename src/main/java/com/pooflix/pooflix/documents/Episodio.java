@@ -8,7 +8,6 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Episodio {
 
     private ObjectId _id;
-    private Integer totalEpisodios;
     private Integer numero;
     private String titulo;
     private double duracion;
@@ -53,14 +52,6 @@ public class Episodio {
     }
 
     public Episodio() {
-    }
-
-    public Integer getTotalEpisodios() {
-        return totalEpisodios;
-    }
-
-    public void setTotalEpisodios(Integer totalEpisodios) {
-        this.totalEpisodios = totalEpisodios;
     }
 
 }
