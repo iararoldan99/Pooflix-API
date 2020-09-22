@@ -30,23 +30,19 @@ public class TemporadaService {
             return false;
     }
 
-    public Temporada crearTemporada(Integer numero, Integer numTotalEpisodios, List<Episodio> episodios, List<Websodio> websodios) {
-        if (existeTemporada(numero)) {
+    public Temporada crearTemporada(Integer numero, Integer numTotalEpisodios, List<Episodio> episodios,
+            List<Websodio> websodios) {
+        Temporada temporada = new Temporada();
+        temporada.setNumero(numero);
+        temporada.setNumTotalEpisodios(numTotalEpisodios);
+        temporada.setEpisodios(episodios);
+        temporada.setWebsodios(websodios);
+
+        boolean tempCreada = crearNuevaTemporada(temporada);
+        if (tempCreada)
+            return temporada;
+        else
             return null;
-        } else {
-            Temporada temporada = new Temporada();
-            temporada.setNumero(numero);
-            temporada.setNumTotalEpisodios(numTotalEpisodios);
-            temporada.setEpisodios(episodios);
-            temporada.setWebsodios(websodios);
-
-            boolean tempCreada = crearNuevaTemporada(temporada);
-            if (tempCreada)
-                return temporada;
-            else
-                return null;
-        }
-
     }
 
     public List<Temporada> listarTemporadas() {

@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface TemporadaRepository extends MongoRepository<Temporada, ObjectId> {
-    Temporada findBy_id(ObjectId id);
+    Temporada findBy_id(ObjectId _id);
 
     Temporada findByNumero(Integer numero);
 

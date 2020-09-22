@@ -1,10 +1,8 @@
 package com.pooflix.pooflix.services;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import com.pooflix.pooflix.documents.Genero;
-import com.pooflix.pooflix.documents.Pelicula;
 import com.pooflix.pooflix.repository.GeneroRepository;
 
 import org.bson.types.ObjectId;

@@ -22,7 +22,7 @@ public class TemporadaController {
     @Autowired
     TemporadaService temporadaService;
 
-    @PostMapping("/temporadas")
+    @PostMapping("/api/temporadas")
     public ResponseEntity<GenericResponse> crearTemporada(@RequestBody TemporadaRequest reqTemp) {
         Temporada temporada = temporadaService.crearTemporada(reqTemp.numero, reqTemp.numTotalEpisodios,
                 reqTemp.episodios, reqTemp.websodios);

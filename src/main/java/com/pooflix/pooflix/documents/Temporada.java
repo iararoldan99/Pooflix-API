@@ -59,9 +59,8 @@ public class Temporada {
         this.numTotalEpisodios = numTotalEpisodios;
     }
 
-    public Temporada(ObjectId _id, Integer numero, Integer numTotalEpisodios, List<Episodio> episodios,
+    public Temporada(Integer numero, Integer numTotalEpisodios, List<Episodio> episodios,
             List<Websodio> websodios) {
-        this._id = _id;
         this.numero = numero;
         this.numTotalEpisodios = numTotalEpisodios;
         this.episodios = episodios;

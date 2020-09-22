@@ -80,17 +80,17 @@ public class SerieController {
     }
 
     //
-    @GetMapping("/series/{id}/episodios")
+    @GetMapping("/series/{_id}/episodios")
     public ResponseEntity<List<Episodio>> traerEpisodios(@PathVariable ObjectId _id) {
 
         return ResponseEntity.ok(serieService.obtenerEpisodiosSerie(_id));
 
     }
 
-    // @GetMapping("/series/{id}/temporadas/{nroTemporada}/episodios/{nroEpisodio}")
-    @GetMapping("/series/{id}/episodios/{nroTemporada}-{nroEpisodio}")
-    public ResponseEntity<Episodio> traerEpisodio(@PathVariable ObjectId _id, @PathVariable int nroTemporada,
-            @PathVariable int nroEpisodio) {
+    @GetMapping("/series/{id}/temporadas/{nroTemporada}/episodios/{nroEpisodio}")
+    // @GetMapping("/series/{_id}/episodios/{numero}-{nroEpisodio}")
+    public ResponseEntity<Episodio> traerEpisodio(@PathVariable ObjectId _id, @PathVariable Integer nroTemporada,
+            @PathVariable Integer nroEpisodio) {
 
         Episodio episodio = serieService.obtenerEpisodioPorNroEpisodio(_id, nroTemporada, nroEpisodio);
         if (episodio == null)
@@ -124,7 +124,7 @@ public class SerieController {
         }
     }
 
-    @PutMapping("/series/calificacion/{id}")
+    @PutMapping("/series/calificacion/{_id}")
     ResponseEntity<GenericResponse> calificarLaSerie(@PathVariable ObjectId _id, double calificacion) {
 
         Serie serie = serieService.obtenerSeriePorId(_id);
